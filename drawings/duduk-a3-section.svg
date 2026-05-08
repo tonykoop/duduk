@@ -1,0 +1,272 @@
+<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" font-family="monospace, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="540" fill="white"/>
+
+  <!-- ═══════════════════════════════════════════
+       TITLE BLOCK (bottom)
+  ════════════════════════════════════════════ -->
+  <rect x="0" y="470" width="900" height="70" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="0" y1="485" x2="900" y2="485" stroke="#000" stroke-width="0.8"/>
+  <line x1="180" y1="470" x2="180" y2="540" stroke="#000" stroke-width="0.8"/>
+  <line x1="540" y1="470" x2="540" y2="540" stroke="#000" stroke-width="0.8"/>
+  <line x1="720" y1="470" x2="720" y2="540" stroke="#000" stroke-width="0.8"/>
+
+  <text x="8" y="481" font-size="8" fill="#555">INSTRUMENT</text>
+  <text x="8" y="494" font-size="10" font-weight="bold">Armenian Duduk — A3 Root</text>
+  <text x="8" y="507" font-size="9">Variant: Tsiranapogh (Apricot)</text>
+  <text x="8" y="520" font-size="8" fill="#800">⚠ EMPIRICAL DRAFT — verify all dims before drilling</text>
+
+  <text x="188" y="481" font-size="8" fill="#555">DRAWING</text>
+  <text x="188" y="494" font-size="10" font-weight="bold">DWG-01 — Longitudinal Section</text>
+  <text x="188" y="507" font-size="9">Datum: Bell end = 0.00"</text>
+  <text x="188" y="520" font-size="9">Units: inches (cm in brackets)</text>
+
+  <text x="548" y="481" font-size="8" fill="#555">SCALE / REV</text>
+  <text x="548" y="494" font-size="9">Scale: approx. 1:2.2 on A4</text>
+  <text x="548" y="507" font-size="9">Rev: v4.3 Draft</text>
+  <text x="548" y="520" font-size="9">Date: 2026-05-08</text>
+
+  <text x="728" y="481" font-size="8" fill="#555">DRAWN BY</text>
+  <text x="728" y="494" font-size="9">Tony Koop</text>
+  <text x="728" y="507" font-size="9">instrument-maker-v4</text>
+  <text x="728" y="520" font-size="9">github.com/tonykoop</text>
+
+  <!-- ═══════════════════════════════════════════
+       DRAWING AREA BORDER
+  ════════════════════════════════════════════ -->
+  <rect x="10" y="10" width="880" height="455" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION TITLE
+  ════════════════════════════════════════════ -->
+  <text x="20" y="30" font-size="11" font-weight="bold" fill="#222">LONGITUDINAL CROSS-SECTION — A3 ROOT ARMENIAN DUDUK</text>
+  <text x="20" y="44" font-size="9" fill="#800">All tone-hole positions and hole diameters are EMPIRICAL ESTIMATES. Record measured values in validation.csv.</text>
+
+  <!-- ═══════════════════════════════════════════
+       INSTRUMENT BODY (cross-section)
+       Scale: 1 inch = 44 px  (body ~13.25" → 583 px)
+       Positions measured from LEFT = bell end (datum 0)
+       Body drawn left-to-right: bell at x=80, reed end at x=663
+  ════════════════════════════════════════════ -->
+
+  <!-- Scale factor: 44px per inch -->
+  <!-- Bell end datum x=80; reed end x = 80 + 13.25*44 = 80+583 = 663 -->
+  <!-- Body center y=260 -->
+  <!-- OD = 0.748" → half = 0.374" → 16.5 px each side -->
+  <!-- Bore ID = 0.472" → half = 0.236" → 10.4 px each side -->
+
+  <!-- Outer body walls (upper and lower halves) -->
+  <!-- Upper outer wall: y = 260 - 16.5 = 243.5 -->
+  <!-- Lower outer wall: y = 260 + 16.5 = 276.5 -->
+  <!-- Upper bore wall:  y = 260 - 10.4 = 249.6 -->
+  <!-- Lower bore wall:  y = 260 + 10.4 = 270.4 -->
+
+  <!-- Solid wood cross-section (shaded) -->
+  <!-- Upper wall band -->
+  <rect x="80" y="243" width="583" height="7" fill="#D4A96A" stroke="none"/>
+  <!-- Lower wall band -->
+  <rect x="80" y="270" width="583" height="7" fill="#D4A96A" stroke="none"/>
+
+  <!-- Bore interior (light) -->
+  <rect x="80" y="250" width="583" height="20" fill="#FFF8F0" stroke="none"/>
+
+  <!-- Outer body outline -->
+  <rect x="80" y="243" width="583" height="34" fill="none" stroke="#222" stroke-width="1.8"/>
+
+  <!-- Bore walls (inner lines) -->
+  <line x1="80" y1="250" x2="663" y2="250" stroke="#444" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <line x1="80" y1="270" x2="663" y2="270" stroke="#444" stroke-width="1.2" stroke-dasharray="6,3"/>
+
+  <!-- Bore centerline -->
+  <line x1="60" y1="260" x2="700" y2="260" stroke="#888" stroke-width="0.7" stroke-dasharray="10,4,2,4"/>
+  <text x="705" y="263" font-size="8" fill="#888">ℓ</text>
+
+  <!-- ═══════════════════════════════════════════
+       BELL END (left, open) — x=80
+  ════════════════════════════════════════════ -->
+  <!-- Bell end cap — open end, chamfered -->
+  <path d="M80,243 L72,247 L72,273 L80,277" fill="none" stroke="#222" stroke-width="1.8"/>
+  <!-- Bell bore opening indicator -->
+  <line x1="72" y1="250" x2="80" y2="250" stroke="#444" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <line x1="72" y1="270" x2="80" y2="270" stroke="#444" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="30" y="260" font-size="8" fill="#000" font-weight="bold">BELL</text>
+  <text x="22" y="271" font-size="8" fill="#000">(OPEN)</text>
+  <text x="16" y="282" font-size="8" fill="#555">Datum 0.00"</text>
+
+  <!-- ═══════════════════════════════════════════
+       REED END (right) — x=663
+  ════════════════════════════════════════════ -->
+  <!-- Reed socket end (flat, open to reed) -->
+  <line x1="663" y1="243" x2="663" y2="277" stroke="#222" stroke-width="2.5"/>
+  <!-- Reed (schematic) extending right -->
+  <rect x="663" y="253" width="60" height="14" fill="#B8D4A0" stroke="#558" stroke-width="1.2" opacity="0.8"/>
+  <text x="668" y="262" font-size="7" fill="#335">REED</text>
+  <text x="666" y="272" font-size="7" fill="#335">~3.90" L</text>
+  <text x="680" y="248" font-size="7" fill="#335">(schematic)</text>
+  <!-- Bridle band on reed -->
+  <rect x="695" y="252" width="5" height="16" fill="#884" stroke="#442" stroke-width="1"/>
+  <text x="701" y="256" font-size="6.5" fill="#442">bridle</text>
+
+  <text x="655" y="238" font-size="8" fill="#000" font-weight="bold">REED</text>
+  <text x="653" y="228" font-size="8" fill="#000">END</text>
+
+  <!-- ═══════════════════════════════════════════
+       DIMENSION — BODY LENGTH
+  ════════════════════════════════════════════ -->
+  <!-- Horizontal dimension line above body -->
+  <line x1="80" y1="218" x2="663" y2="218" stroke="#0055AA" stroke-width="1.0"/>
+  <line x1="80" y1="213" x2="80" y2="243" stroke="#0055AA" stroke-width="0.8"/>
+  <line x1="663" y1="213" x2="663" y2="243" stroke="#0055AA" stroke-width="0.8"/>
+  <!-- Arrowheads -->
+  <polygon points="80,218 88,215 88,221" fill="#0055AA"/>
+  <polygon points="663,218 655,215 655,221" fill="#0055AA"/>
+  <rect x="290" y="210" width="190" height="14" fill="white"/>
+  <text x="295" y="221" font-size="9" fill="#0055AA" font-weight="bold">≈ 13.25"  [33.7 cm]  EMPIRICAL</text>
+
+  <!-- ═══════════════════════════════════════════
+       DIMENSION — OD
+  ════════════════════════════════════════════ -->
+  <line x1="770" y1="243" x2="810" y2="243" stroke="#0055AA" stroke-width="0.8"/>
+  <line x1="770" y1="277" x2="810" y2="277" stroke="#0055AA" stroke-width="0.8"/>
+  <line x1="800" y1="243" x2="800" y2="277" stroke="#0055AA" stroke-width="1.0"/>
+  <polygon points="800,243 797,251 803,251" fill="#0055AA"/>
+  <polygon points="800,277 797,269 803,269" fill="#0055AA"/>
+  <text x="806" y="262" font-size="9" fill="#0055AA">OD</text>
+  <text x="806" y="273" font-size="9" fill="#0055AA">0.748"</text>
+
+  <!-- ═══════════════════════════════════════════
+       DIMENSION — BORE ID
+  ════════════════════════════════════════════ -->
+  <line x1="730" y1="250" x2="760" y2="250" stroke="#AA5500" stroke-width="0.8"/>
+  <line x1="730" y1="270" x2="760" y2="270" stroke="#AA5500" stroke-width="0.8"/>
+  <line x1="750" y1="250" x2="750" y2="270" stroke="#AA5500" stroke-width="1.0"/>
+  <polygon points="750,250 747,257 753,257" fill="#AA5500"/>
+  <polygon points="750,270 747,263 753,263" fill="#AA5500"/>
+  <text x="754" y="257" font-size="8.5" fill="#AA5500">∅ bore</text>
+  <text x="754" y="268" font-size="8.5" fill="#AA5500">0.472"</text>
+
+  <!-- ═══════════════════════════════════════════
+       TONE HOLES  (positions from bell, in px = pos_in × 44)
+       Hole 1: 1.674" → 73.7 px → x = 80+73.7 = 154
+       Hole 2: 2.442" → 107.4 → x = 187
+       Hole 3: 3.849" → 169.4 → x = 249
+       Hole 4: 5.104" → 224.6 → x = 305
+       Hole 5: 5.678" → 249.8 → x = 330
+       Hole 6: 6.733" → 296.3 → x = 376
+       Hole 7: 7.673" → 337.6 → x = 418
+       Hole 8: 8.510" → 374.4 → x = 454
+       Thumb:  8.893" → 391.3 → x = 471  (back — shown below)
+       Hole diameter ~0.25" → 5.5 px radius
+  ════════════════════════════════════════════ -->
+
+  <!-- Holes 1-8 (front, top of body) -->
+  <!-- Hole 1 -->
+  <circle cx="154" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="148" y="234" font-size="7.5" fill="#333">H1</text>
+  <text x="140" y="309" font-size="7" fill="#555">1.67"</text>
+  <text x="140" y="318" font-size="7" fill="#800">B3</text>
+
+  <!-- Hole 2 -->
+  <circle cx="187" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="181" y="234" font-size="7.5" fill="#333">H2</text>
+  <text x="176" y="309" font-size="7" fill="#555">2.44"</text>
+  <text x="178" y="318" font-size="7" fill="#800">C4</text>
+
+  <!-- Hole 3 -->
+  <circle cx="249" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="243" y="234" font-size="7.5" fill="#333">H3</text>
+  <text x="238" y="309" font-size="7" fill="#555">3.85"</text>
+  <text x="240" y="318" font-size="7" fill="#800">D4</text>
+
+  <!-- Hole 4 -->
+  <circle cx="305" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="299" y="234" font-size="7.5" fill="#333">H4</text>
+  <text x="294" y="309" font-size="7" fill="#555">5.10"</text>
+  <text x="296" y="318" font-size="7" fill="#800">E4</text>
+
+  <!-- Hole 5 -->
+  <circle cx="330" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="324" y="234" font-size="7.5" fill="#333">H5</text>
+  <text x="319" y="309" font-size="7" fill="#555">5.68"</text>
+  <text x="321" y="318" font-size="7" fill="#800">F4</text>
+
+  <!-- Hole 6 -->
+  <circle cx="376" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="370" y="234" font-size="7.5" fill="#333">H6</text>
+  <text x="365" y="309" font-size="7" fill="#555">6.73"</text>
+  <text x="367" y="318" font-size="7" fill="#800">G4</text>
+
+  <!-- Hole 7 -->
+  <circle cx="418" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="412" y="234" font-size="7.5" fill="#333">H7</text>
+  <text x="407" y="309" font-size="7" fill="#555">7.67"</text>
+  <text x="409" y="318" font-size="7" fill="#800">A4</text>
+
+  <!-- Hole 8 -->
+  <circle cx="454" cy="243" r="5.5" fill="white" stroke="#222" stroke-width="1.4"/>
+  <text x="448" y="234" font-size="7.5" fill="#333">H8</text>
+  <text x="443" y="309" font-size="7" fill="#555">8.51"</text>
+  <text x="445" y="318" font-size="7" fill="#800">B4</text>
+
+  <!-- Thumb hole 9 (back of body — shown below centerline) -->
+  <circle cx="471" cy="277" r="5.5" fill="white" stroke="#558" stroke-width="1.4" stroke-dasharray="3,2"/>
+  <text x="463" y="291" font-size="7.5" fill="#558">TH9</text>
+  <text x="457" y="301" font-size="7" fill="#558">8.89" (back)</text>
+  <text x="463" y="312" font-size="7" fill="#800">C5</text>
+
+  <!-- Dimension leader lines from holes down to position labels -->
+  <line x1="154" y1="277" x2="154" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="187" y1="277" x2="187" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="249" y1="277" x2="249" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="305" y1="277" x2="305" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="330" y1="277" x2="330" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="376" y1="277" x2="376" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="418" y1="277" x2="418" y2="305" stroke="#AAA" stroke-width="0.6"/>
+  <line x1="454" y1="277" x2="454" y2="305" stroke="#AAA" stroke-width="0.6"/>
+
+  <!-- Datum reference line from bell -->
+  <line x1="80" y1="330" x2="663" y2="330" stroke="#0055AA" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="15" y="333" font-size="7.5" fill="#0055AA">Datum →</text>
+  <text x="15" y="342" font-size="7.5" fill="#0055AA">Bell=0"</text>
+
+  <!-- ═══════════════════════════════════════════
+       HOLE DIAMETER CALLOUT
+  ════════════════════════════════════════════ -->
+  <text x="20" y="360" font-size="9" fill="#222">Tone holes: ∅ ≈ 0.250" [6.35 mm]  </text>
+  <text x="20" y="372" font-size="9" fill="#800">EMPIRICAL — drill pilot 0.1875", open to 0.250", adjust by undercutting</text>
+
+  <!-- ═══════════════════════════════════════════
+       WALL THICKNESS CALLOUT
+  ════════════════════════════════════════════ -->
+  <!-- Small magnified cross-section inset -->
+  <rect x="690" y="340" width="175" height="110" fill="#FFFDF5" stroke="#888" stroke-width="1"/>
+  <text x="695" y="354" font-size="8.5" font-weight="bold" fill="#333">SECTION DETAIL — Wall</text>
+  <!-- Outer circle -->
+  <circle cx="758" cy="405" r="28" fill="#D4A96A" stroke="#222" stroke-width="1.5"/>
+  <!-- Bore circle -->
+  <circle cx="758" cy="405" r="17.7" fill="#FFF8F0" stroke="#444" stroke-width="1"/>
+  <!-- Wall callout -->
+  <line x1="758" y1="377" x2="758" y2="395" stroke="#0055AA" stroke-width="0.8"/>
+  <line x1="775.7" y1="405" x2="786" y2="405" stroke="#0055AA" stroke-width="0.8"/>
+  <text x="788" y="395" font-size="7.5" fill="#0055AA">OD</text>
+  <text x="788" y="405" font-size="7.5" fill="#0055AA">0.748"</text>
+  <text x="728" y="390" font-size="7" fill="#AA5500">∅</text>
+  <text x="718" y="400" font-size="7" fill="#AA5500">0.472"</text>
+  <text x="760" y="363" font-size="7" fill="#555">wall</text>
+  <text x="757" y="372" font-size="7" fill="#555">0.138"</text>
+
+  <!-- ═══════════════════════════════════════════
+       EMPIRICAL WARNING BANNER
+  ════════════════════════════════════════════ -->
+  <rect x="20" y="390" width="650" height="22" fill="#FFF3CD" stroke="#E6A817" stroke-width="1.2" rx="3"/>
+  <text x="30" y="405" font-size="9" fill="#7A5000">⚠  DRAFT v4.3 — All tone-hole positions and body length are first-estimate EMPIRICAL values. Physical build and tuning required before these dimensions are confirmed. See design.md and validation.csv.</text>
+
+  <!-- ═══════════════════════════════════════════
+       MATERIAL / FINISH NOTES
+  ════════════════════════════════════════════ -->
+  <text x="20" y="430" font-size="8.5" fill="#333">Material: Apricot wood (Prunus armeniaca) preferred; walnut acceptable alternate.</text>
+  <text x="20" y="442" font-size="8.5" fill="#333">Bore finish: Boiled linseed oil, 3 coats, 48-hr cure between coats. Exterior: pure tung oil, 3 coats.</text>
+  <text x="20" y="454" font-size="8.5" fill="#333">Tolerance: Bore ID ±0.005" | OD ±0.005" | Hole positions ±0.020" first-pass (adjust empirically to tune).</text>
+
+</svg>

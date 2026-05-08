@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duduk Family — Build Log | Tony Koop</title>
+  <style>
+    :root {
+      --bg: #fdfaf6;
+      --surface: #fff;
+      --border: #d9cfc0;
+      --text: #1a1a18;
+      --muted: #6b6258;
+      --accent: #7b4f20;
+      --accent-light: #f5ede0;
+      --warn: #92400e;
+      --warn-bg: #fffbeb;
+      --warn-border: #d97706;
+      --link: #1d4ed8;
+      --code-bg: #f3ede3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 2.5rem 2rem 2rem;
+    }
+    header .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 0.4rem;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: normal;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+    }
+    header .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+    header .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      opacity: 0.65;
+      margin-top: 0.8rem;
+    }
+    nav {
+      background: #5c3710;
+      padding: 0.5rem 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #f5e6d3;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      opacity: 0.85;
+    }
+    nav a:hover { opacity: 1; text-decoration: underline; }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .notice {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn-border);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .notice strong { color: var(--warn); font-family: 'Inter', sans-serif; }
+    .notice p { font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--warn); margin-top: 0.3rem; }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin: 2.5rem 0 1rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--text);
+    }
+    p { margin-bottom: 0.9rem; }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.86rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .spec-table th {
+      background: var(--accent-light);
+      color: var(--accent);
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      font-weight: 600;
+    }
+    .spec-table td {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .spec-table tr:nth-child(even) td { background: #faf7f2; }
+    .empirical {
+      color: var(--warn);
+      font-style: italic;
+      font-size: 0.82rem;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #d9c4a8;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-right: 0.3rem;
+    }
+    .tag.empirical-tag { background: #fffbeb; color: #92400e; border-color: #d97706; }
+    .tag.private-tag { background: #fef2f2; color: #991b1b; border-color: #f87171; }
+    .hole-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      margin: 0.75rem 0 1.5rem;
+    }
+    .hole-table th {
+      background: #f0e8d8;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .hole-table td {
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--border);
+    }
+    .hole-table tr:nth-child(even) td { background: #faf7f2; }
+    code {
+      background: var(--code-bg);
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.82rem;
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+    }
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .file-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+    }
+    .file-card .fname {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--link);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .file-card .fdesc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .variant-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 0.75rem 1rem;
+    }
+    .variant-card h4 {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .variant-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    footer {
+      background: #3b2510;
+      color: #c8b89a;
+      text-align: center;
+      padding: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+    }
+    footer a { color: #e8d5b8; }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #fef2f2;
+      border: 1px solid #f87171;
+      color: #991b1b;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Heifer Zephyr Instrument Workshop · Build Log</div>
+  <h1>Duduk Family</h1>
+  <div class="subtitle">Armenian double-reed cylindrical-bore aerophone — engineering documentation</div>
+  <div class="meta">
+    Variants: Armenian · Turkish Mey · Azerbaijani Balaban · Georgian Duduki &nbsp;|&nbsp;
+    20 keys (E3–B4) &nbsp;|&nbsp; 4 bore groups &nbsp;|&nbsp; UNESCO ICH 2005
+  </div>
+</header>
+
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#physics">Physics</a>
+  <a href="#variants">Variants</a>
+  <a href="#primary">A3 Design</a>
+  <a href="#holes">Hole Schedule</a>
+  <a href="#build">Build Steps</a>
+  <a href="#files">Files</a>
+  <a href="#provenance">Provenance</a>
+  <a href="https://github.com/tonykoop/duduk">GitHub ↗</a>
+</nav>
+
+<div class="container">
+
+  <div class="status-badge">
+    ⚠ PRIVATE DRAFT — pending physical build + cultural review
+  </div>
+
+  <!-- PROVENANCE NOTICE -->
+  <div class="notice">
+    <strong>Cultural Heritage Notice</strong>
+    <p>The duduk (<em>tsiranapogh</em>) is an Armenian instrument recognized as a UNESCO Intangible Cultural Heritage (2005). This page documents the instrument's engineering geometry for workshop study. It does not reproduce traditional Armenian reed-making, tuning practice, or performance technique. All acoustic predictions are first estimates marked <em>empirical</em> — they require physical build and measurement before use. See <a href="../resources.md">resources.md</a> for full provenance notes and recommended sources.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <h2 id="overview">Project Overview</h2>
+
+  <p>The <strong>duduk</strong> is one of the oldest double-reed instruments in continuous use, central to Armenian music for at least 1,500 years. Its distinctive sound — breathy, vocal, expressive — comes from the combination of a giant Arundo donax double reed, a cylindrical bore, and a technique refined over generations. This build-log documents the engineering dimensions of the instrument family for workshop fabrication and study.</p>
+
+  <blockquote>The goal of this packet is to understand the physics and build an instrument that produces a stable tone in the right pitch range — not to reproduce the sound or craft of a traditional Armenian duduk. Those are different and harder goals that require learning directly from tradition-bearers.</blockquote>
+
+  <table class="spec-table">
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Acoustic class</td><td>Closed cylindrical aerophone (stopped pipe)</td></tr>
+    <tr><td>Excitation</td><td>Giant double reed (Arundo donax)</td></tr>
+    <tr><td>Bore profile</td><td>Cylindrical (slight taper in traditional instruments — modeled as cylinder)</td></tr>
+    <tr><td>Number of holes</td><td>9 (8 front + 1 thumb)</td></tr>
+    <tr><td>Family range</td><td>E3 root to B4 root (20 keys)</td></tr>
+    <tr><td>Primary build target</td><td>Armenian Duduk, A3 root — bore 0.472″, body ≈13.25″ <span class="empirical">EMPIRICAL</span></td></tr>
+    <tr><td>Traditional wood</td><td>Apricot (<em>Prunus armeniaca</em>)</td></tr>
+    <tr><td>Heritage status</td><td>UNESCO ICH 2005 (Armenian duduk and its music)</td></tr>
+    <tr><td>Design sheet</td><td><code>duduk-design-table.xlsx</code></td></tr>
+    <tr><td>Packet status</td><td><span class="tag private-tag">PRIVATE</span> — pending build + review</td></tr>
+  </table>
+
+  <!-- PHYSICS -->
+  <h2 id="physics">Acoustic Physics</h2>
+
+  <h3>Stopped Cylindrical Pipe</h3>
+  <p>The duduk bore is closed at the reed end (the player's lips seal around the reed) and open at the bell. This creates a <strong>stopped cylindrical pipe</strong>:</p>
+  <p><code>f = c / (4 · L_eff)</code> &nbsp; (fundamental only — odd harmonics)</p>
+  <p>where <code>c ≈ 343 m/s</code> at 20°C and <code>L_eff</code> is the total acoustic length including the reed effective length and the open-end correction. The odd-harmonic series gives the duduk its mellow, clarinet-like timbre.</p>
+
+  <h3>Effective Length (A3 Root, primary)</h3>
+  <table class="spec-table">
+    <tr><th>Term</th><th>Value</th><th>Status</th></tr>
+    <tr><td>Acoustic length L_eff</td><td>39.0 cm / 15.35″</td><td>calculated</td></tr>
+    <tr><td>Open-end correction (0.6 × r)</td><td>0.36 cm / 0.142″</td><td>formula</td></tr>
+    <tr><td>Reed effective length (est. 0.5 × physical)</td><td>4.97 cm / 1.95″</td><td><span class="tag empirical-tag">EMPIRICAL</span></td></tr>
+    <tr><td>Body length estimate</td><td><strong>≈ 33.7 cm / 13.25″</strong></td><td><span class="tag empirical-tag">EMPIRICAL</span></td></tr>
+  </table>
+
+  <h3>Reed Sub-Resonance</h3>
+  <p>The double reed must oscillate at a frequency <em>higher</em> than the bore fundamental — this is the "sub-resonant" condition that allows the bore to control the pitch. Players adjust reed pitch through the <strong>bridle</strong>, a band wrapped around the reed that constrains its opening. <span class="empirical">Reed behavior cannot be predicted from geometry alone — it is inherently empirical and requires a skilled player to tune.</span></p>
+
+  <!-- VARIANTS -->
+  <h2 id="variants">Regional Variants</h2>
+  <p>The design table covers four closely related instruments. All share the stopped-pipe model and 9-hole layout.</p>
+
+  <div class="variant-grid">
+    <div class="variant-card">
+      <h4>Armenian Duduk</h4>
+      <p><em>Tsiranapogh</em> · Apricot wood · Warm, breathy, vocal · UNESCO ICH 2005</p>
+    </div>
+    <div class="variant-card">
+      <h4>Turkish Mey</h4>
+      <p>Plum or walnut · Bright, nasal tone · Largest bore group</p>
+    </div>
+    <div class="variant-card">
+      <h4>Azerbaijani Balaban</h4>
+      <p>Mulberry · Reedy, penetrating · Mugham repertoire</p>
+    </div>
+    <div class="variant-card">
+      <h4>Georgian Duduki</h4>
+      <p>Apricot or similar · Narrower bore · Georgian folk tradition</p>
+    </div>
+  </div>
+
+  <!-- PRIMARY INSTRUMENT -->
+  <h2 id="primary">Primary: Armenian Duduk, A3 Root</h2>
+  <table class="spec-table">
+    <tr><th>Parameter</th><th>Value</th><th>Status</th></tr>
+    <tr><td>Root note (all closed)</td><td>A3 = 220 Hz</td><td>target</td></tr>
+    <tr><td>Bore ID</td><td>0.472″ / 12.0 mm</td><td>design input</td></tr>
+    <tr><td>Wall thickness</td><td>0.138″ / 3.5 mm</td><td>design input</td></tr>
+    <tr><td>Outer diameter</td><td>0.748″ / 19.0 mm</td><td>calculated</td></tr>
+    <tr><td>Body length</td><td>≈ 13.25″ / 33.7 cm</td><td><span class="tag empirical-tag">EMPIRICAL</span></td></tr>
+    <tr><td>Reed length (physical)</td><td>3.90″ / 99 mm</td><td>design input</td></tr>
+    <tr><td>Reed width</td><td>0.63″ / 16 mm</td><td>design input</td></tr>
+    <tr><td>Wood</td><td>Apricot (preferred) / Walnut (alternate)</td><td>traditional / practical</td></tr>
+    <tr><td>Bore finish</td><td>Boiled linseed oil, 3 coats</td><td>recommended</td></tr>
+    <tr><td>Exterior finish</td><td>Pure tung oil, 3 coats</td><td>recommended</td></tr>
+  </table>
+
+  <!-- HOLE SCHEDULE -->
+  <h2 id="holes">Hole Schedule — A3 Root <span class="tag empirical-tag">All positions EMPIRICAL</span></h2>
+  <p>Scale: A natural minor (Aeolian) — A B C D E F G A. Traditional playing adds extensive microtonal inflection.</p>
+
+  <table class="hole-table">
+    <tr>
+      <th>Hole</th><th>Finger</th><th>Note</th><th>Freq (Hz)</th>
+      <th>From bell (in)</th><th>From bell (cm)</th><th>Status</th>
+    </tr>
+    <tr><td>Root</td><td>all closed</td><td>A3</td><td>220.00</td><td>—</td><td>—</td><td>anchor</td></tr>
+    <tr><td>1</td><td>RH pinky</td><td>B3</td><td>246.94</td><td>1.67″</td><td>4.25</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>2</td><td>RH ring</td><td>C4</td><td>261.63</td><td>2.44″</td><td>6.20</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>3</td><td>RH middle</td><td>D4</td><td>293.66</td><td>3.85″</td><td>9.78</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>4</td><td>RH index</td><td>E4</td><td>329.63</td><td>5.10″</td><td>12.96</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>5</td><td>LH ring</td><td>F4</td><td>349.23</td><td>5.68″</td><td>14.42</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>6</td><td>LH middle</td><td>G4</td><td>392.00</td><td>6.73″</td><td>17.10</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>7</td><td>LH index</td><td>A4</td><td>440.00</td><td>7.67″</td><td>19.49</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>8</td><td>top front</td><td>B4</td><td>493.88</td><td>8.51″</td><td>21.61</td><td class="empirical">EMPIRICAL</td></tr>
+    <tr><td>Thumb 9</td><td>left thumb (back)</td><td>C5</td><td>523.25</td><td>8.89″</td><td>22.59</td><td class="empirical">EMPIRICAL</td></tr>
+  </table>
+
+  <!-- BUILD STEPS -->
+  <h2 id="build">Build Process Overview</h2>
+  <p>Full instructions in <code>assembly-manual.md</code>. Summary:</p>
+
+  <ol style="font-family: 'Inter', sans-serif; font-size: 0.88rem; padding-left: 1.5rem; line-height: 2.0;">
+    <li>Select and acclimate apricot or walnut turning blank (1.00″ dia × 16″ L, &lt;8% EMC)</li>
+    <li>Mount on lathe — turn tenons, true OD to 0.780″</li>
+    <li>Bore through full length with 0.472″ Forstner, 300–400 RPM</li>
+    <li>Finish-turn OD to 0.748″; sand 120→320</li>
+    <li>Part to rough length 14.0″ (0.75″ over estimate — leave for tuning trim)</li>
+    <li>Apply bore oil (linseed, 3 coats, 48-hr cure each)</li>
+    <li>Fit reed with PTFE tape; adjust bridle; <strong>tune to A3 = 220 Hz; record final body length</strong></li>
+    <li>Drill tone holes 1→8 sequentially, testing pitch after each; drill thumb hole 9 last</li>
+    <li>Adjust holes by undercutting or redrilling as needed</li>
+    <li>Apply exterior finish (tung oil, 3 coats); photograph; complete validation.csv</li>
+  </ol>
+
+  <!-- FILES -->
+  <h2 id="files">Packet Files</h2>
+  <div class="files-grid">
+    <div class="file-card">
+      <span class="fname">design.md</span>
+      <span class="fdesc">Governing acoustic model, hole schedule, full family table</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">duduk-design-table.xlsx</span>
+      <span class="fdesc">Parametric design sheet — 20 keys × 4 variants</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">bom.csv</span>
+      <span class="fdesc">Bill of materials — A3 Armenian build</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">sourcing.csv</span>
+      <span class="fdesc">Supplier categories and search terms</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">cut-list.csv</span>
+      <span class="fdesc">Stock and machining sizes</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">validation.csv</span>
+      <span class="fdesc">Dimensional and tuning check sheet</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">assembly-manual.md</span>
+      <span class="fdesc">Step-by-step build instructions</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">drawings/duduk-a3-section.svg</span>
+      <span class="fdesc">Dimensioned longitudinal cross-section</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">cnc/setup-sheet.md</span>
+      <span class="fdesc">Lathe + drill-press operation plan</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">wolfram/wolfram-starter.wl</span>
+      <span class="fdesc">Wolfram model — stopped-pipe physics</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">risks.md</span>
+      <span class="fdesc">Red-team risk register (12 risks)</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">resources.md</span>
+      <span class="fdesc">Provenance, sources, cultural context</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">jig-decision.md</span>
+      <span class="fdesc">Fixture decisions — V-block, lathe setup</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">photo-shotlist.md</span>
+      <span class="fdesc">Photo documentation plan</span>
+    </div>
+    <div class="file-card">
+      <span class="fname">supplier-rfq.md</span>
+      <span class="fdesc">RFQ template for wood and reeds</span>
+    </div>
+  </div>
+
+  <!-- PROVENANCE -->
+  <h2 id="provenance">Provenance and Cultural Context</h2>
+
+  <p>The duduk — <em>tsiranapogh</em> (Armenian: "apricot pipe") — has been central to Armenian music and ceremony for at least 1,500 years, with some scholars tracing the instrument to Urartu (~1500 BCE). It is played at weddings, funerals, church services, and as an expressive solo vehicle. The instrument was recognized by UNESCO in 2005 as a Masterpiece of the Oral and Intangible Heritage of Humanity.</p>
+
+  <p>The four instruments documented here — Armenian duduk, Turkish mey, Azerbaijani balaban, and Georgian duduki — share physical form but belong to distinct living cultural traditions. They should not be conflated.</p>
+
+  <p><strong>Scope of this documentation:</strong> Engineering geometry for workshop study. Not a substitute for learning from a traditional musician or instrument maker. Reed-making in particular is a deep craft tradition not captured in any engineering document.</p>
+
+  <p><strong>Recommended listening:</strong> Djivan Gasparyan, <em>I Will Not Be Sad in This World</em> (ECM Records) — the definitive reference recording for the expressive range of the Armenian duduk.</p>
+
+  <p><strong>Before publishing:</strong> See the public-release checklist in <a href="../resources.md">resources.md</a>. This repo stays private until physical build is complete, tuning is validated, and provenance notes are reviewed.</p>
+
+</div>
+
+<footer>
+  <p>
+    <a href="https://github.com/tonykoop/duduk">github.com/tonykoop/duduk</a> &nbsp;·&nbsp;
+    Part of the <a href="https://github.com/tonykoop/instrument-maker">tonykoop/instrument-maker</a> catalogue &nbsp;·&nbsp;
+    CC BY 4.0 &nbsp;·&nbsp;
+    Generated by instrument-maker-v4.3 &nbsp;·&nbsp; 2026-05-08
+  </p>
+  <p style="margin-top:0.4rem; opacity:0.6;">
+    The duduk is a UNESCO Intangible Cultural Heritage instrument (2005).
+    This page documents engineering geometry for workshop study only.
+  </p>
+</footer>
+
+</body>
+</html>
