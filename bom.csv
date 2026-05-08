@@ -1,0 +1,16 @@
+Part ID,Part Name,Description,Qty,Unit,Material,Dimensions (stock),Est. Cost Each,Est. Total,Source Category,Notes
+DUD-A3-001,Body tube blank,Cylindrical body — Armenian Duduk A3 root,1,ea,Apricot wood (preferred) or walnut,1.00" dia round × 16" L,12.00,12.00,Specialty lumber / turning blank,Apricot: specialty source req. Walnut: Woodcraft or similar. +2.75" over est. body for chuck allowance.
+DUD-A3-002,Reed (double — Arundo donax),Giant cane double reed for A3 duduk,4,ea,Arundo donax (giant cane — aged),3.90" L × 0.63" W nominal,20.00,80.00,Specialty music supplier,Buy 4–6 for initial testing. Reeds break during fitting/adjustment. Source from Armenian music shops.
+DUD-A3-003,Bridle,Reed-clamping band (constrains opening),2,ea,Synthetic or natural fiber cord / heat-shrink tubing,Approx. 0.75" wide × circumference of reed,1.50,3.00,Hardware / music supplier,Traditional: wound thread. Modern: heat-shrink or rubber band. Qty 2: one fitted + one spare.
+DUD-A3-004,Finish — bore,Food-safe bore oil (linseed or walnut oil),1,oz,Linseed oil (boiled) or raw walnut oil,—,3.00,3.00,Hardware / grocery,Thin coats; flood bore and drain. Let cure 48 hrs between coats. 3 coats minimum.
+DUD-A3-005,Finish — exterior,Tung oil or wax finish,2,oz,Pure tung oil or beeswax + carnauba blend,—,4.00,8.00,Hardware / woodworking supply,Do not use film-forming finish on bore. Exterior: 2–3 coats wipe-on.
+DUD-A3-006,Reed insert wrap,Thread or tape to fit reed shank into socket,1,ea,PTFE plumber's tape or linen thread,—,1.00,1.00,Hardware,Wrap reed shank to achieve airtight fit in socket. Adjust wrap thickness for tuning.
+DUD-A3-007,Sandpaper — bore,Cylindrical bore smoothing,1,set,Sandpaper,120/180/220/320 grit on dowel,2.00,2.00,Hardware,Wrap around a dowel slightly smaller than bore. Work progressively finer.
+DUD-A3-008,Marking fluid,Layout dye or pencil for hole center marking,1,ea,Dykem or felt-tip marker,—,3.00,3.00,Hardware / art supply,Mark hole centers from drawing. Verify with caliper before drilling.
+,,,,,,,,,,
+,,TOTALS,,,,,,,112.00,,All costs USD estimated; verify current pricing before ordering.
+,,,,,,,,,,
+,,NOTES,,,,,,,,
+,,"Reed cost dominates BOM. Quality reeds from Armenian suppliers may be $30–100 each.",,,,,,,,
+,,"Apricot wood: if unavailable locally, consider Craft Supplies USA or specialist turning-blank suppliers.",,,,,,,,
+,,"All costs are estimates only — verify before purchasing. Last checked: 2026-05-08.",,,,,,,,

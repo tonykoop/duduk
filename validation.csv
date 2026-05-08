@@ -1,0 +1,27 @@
+Check ID,Category,Parameter,Target,Measured,Cents Error,Pass/Fail,Date,Instrument,Notes
+V-DIM-01,Dimensional,Bore ID,0.472" ± 0.005",TBD,,TBD,,DUD-A3-001,Measure with bore gauge at 3 points (near reed end; midpoint; near bell)
+V-DIM-02,Dimensional,Body OD,0.748" ± 0.005",TBD,,TBD,,DUD-A3-001,Measure at 3 points. Taper OK within ±0.010" over length.
+V-DIM-03,Dimensional,Body length (tube only),Target TBD after reed fit,TBD,,TBD,,DUD-A3-001,Record actual length after tuning trim. This IS the calibrated value.
+V-DIM-04,Dimensional,Reed physical length,3.90" ± 0.10",TBD,,TBD,,DUD-A3-002,Measure from tip to shank base before fitting
+V-DIM-05,Dimensional,Reed physical width (max),"0.63"" ± 0.05""",TBD,,TBD,,DUD-A3-002,Measure at widest point
+V-ACOU-01,Acoustic,Fundamental (all closed),A3 = 220.00 Hz,TBD,TBD,TBD,,DUD-A3,Measure with electronic tuner (Korg OT-120 preferred). Tune reed bridle before measuring. Record temperature + RH.
+V-ACOU-02,Acoustic,Hole 1 open (B3),246.94 Hz,TBD,TBD,TBD,,DUD-A3,Record cents deviation from equal temperament. Traditional playing uses just intonation — deviation expected and acceptable.
+V-ACOU-03,Acoustic,Hole 2 open (C4),261.63 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-04,Acoustic,Hole 3 open (D4),293.66 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-05,Acoustic,Hole 4 open (E4),329.63 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-06,Acoustic,Hole 5 open (F4),349.23 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-07,Acoustic,Hole 6 open (G4),392.00 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-08,Acoustic,Hole 7 open (A4),440.00 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-09,Acoustic,Hole 8 open (B4),493.88 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-10,Acoustic,Thumb hole open (C5),523.25 Hz,TBD,TBD,TBD,,DUD-A3,
+V-ACOU-11,Acoustic,Reed stability — all holes closed,No squeaking or instability at mf dynamic,TBD,,TBD,,DUD-A3,Adjust bridle until stable oscillation. Record bridle position description.
+V-ACOU-12,Acoustic,Overblowing — lowest mode,Overblows to 3rd harmonic (a twelfth) at full pressure,TBD,,TBD,,DUD-A3,Duduks typically don't overblow cleanly — limited range is characteristic. Note if any upper mode is accessible.
+V-FIN-01,Finish,Bore finish — cure,No tackiness; dry to touch,TBD,,TBD,,DUD-A3,Check after 48-hr cure. Apply 3rd coat if still absorbing.
+V-FIN-02,Finish,Exterior — uniformity,No runs or bare patches visible,TBD,,TBD,,DUD-A3,
+V-CULT-01,Cultural review,Provenance notes reviewed,Review resources.md before sharing publicly,TBD,,TBD,,—,"Has the cultural context section been reviewed by someone with knowledge of Armenian music? Recommend: yes before making the repo public."
+V-SAFE-01,Safety,Reed fit — no air leak,No hiss audible around reed socket,TBD,,TBD,,DUD-A3,Check with reed seated and playing. Adjust PTFE wrap if leaking.
+,,,,,,,,,,
+,,MEASUREMENT CONDITIONS,,,,,,,"Record: tuner model, temperature (°F), relative humidity (%), player"
+,,Temperature (°F):,Target: 68°F (20°C),TBD,,,,,,
+,,Relative Humidity (%):,Target: 40–55% RH,TBD,,,,,,
+,,Tuner:,Korg OT-120 or equivalent chromatic tuner,TBD,,,,,,
