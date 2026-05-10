@@ -1,0 +1,12 @@
+X:1
+T:Glide Exercise — Duduk in A
+C:sheet-music skill
+M:4/4
+L:1/2
+Q:1/2=44
+K:Am
+H:Practice slow portamento glides between adjacent pitches.
+H:{X}Y in ABC = begin on X and slide slowly up/down into Y.
+H:Each glide should take approximately a half-note at this tempo.
+{A,}B, {B,}C {C}D {D}E | {E}F {F}G {G}A A2 |
+{A}G {G}F {F}E {E}D | {D}C {C}B, {B,}A, A,2 |]
