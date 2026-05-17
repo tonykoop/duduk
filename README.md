@@ -61,7 +61,7 @@ duduk/
 │   └── wolfram-starter.wl     ← Wolfram acoustic model package
 ├── site/
 │   └── index.html             ← build-log static site
-├── cad/                        ← (placeholder — SolidWorks files TBD)
+├── cad/                        ← conservative OpenSCAD smoke starter + CAD notes
 ├── images/                     ← (placeholder — photos per photo-shotlist.md)
 └── data/                       ← (placeholder — measured validation data)
 ```

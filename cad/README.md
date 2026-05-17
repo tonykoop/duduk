@@ -1,6 +1,11 @@
 # Duduk CAD Starter
 
-No CAD solids are included yet. Model the first body after the A3-root prototype is measured with the reed actually used for tuning.
+No build-ready CAD solids are included yet.
+This lane ships a conservative OpenSCAD smoke artifact for visualization only:
+
+- `duduk-openscad-smoke.scad`
+
+Model the first body only after the A3-root prototype is measured with the reed actually used for tuning.
 
 ## Suggested Parameters
 
