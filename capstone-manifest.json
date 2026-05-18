@@ -1,11 +1,60 @@
 {
   "packet": "duduk",
   "mode": "root",
+  "title": "Duduk Family — Studio Explorer",
+  "instrument": "Duduk Family",
+  "build_target": "A3-root Armenian Duduk",
+  "artifact_focus": "Explorer showcase for a private L2 duduk packet",
+  "packet_version": "instrument-maker-v4.4.8 explorer",
   "readiness": "L2-private-draft",
+  "release_status": "private draft",
+  "family_members": [
+    "Armenian duduk",
+    "Turkish mey",
+    "Azerbaijani balaban",
+    "Georgian duduki",
+    "double reed woodwind"
+  ],
+  "cultural_provenance": {
+    "claim": "This explorer summarizes an engineering study packet for the duduk family. The Armenian duduk is a living cultural heritage instrument; this repository documents geometry, acoustic assumptions, and validation plans without claiming traditional craft authority or measured performance quality."
+  },
+  "physical_design_anchors": {
+    "bore_id_in": "0.472 for the A3-root primary build target",
+    "body_length_basis": "Approx. 13.25 in empirical starting estimate; trim after reed fit",
+    "reed_basis": "Arundo donax double reed, behavior requires measurement",
+    "authority_boundary": "Design table, CAD/drawings, and validation.csv outrank generated showcase text"
+  },
+  "release_gate": {
+    "public_candidate": false,
+    "required_before_public": [
+      "Build and play the A3-root prototype.",
+      "Replace validation.csv TBD rows with measured dimensions and tuning results.",
+      "Photograph the build per photo-shotlist.md.",
+      "Complete cultural review before public release.",
+      "Keep OpenSCAD/Wolfram smoke outputs labeled as runtime or scaffold evidence until measured data and reviewed CAD support stronger claims."
+    ]
+  },
+  "engineering": {
+    "wolfram": [
+      {
+        "source_file": "wolfram/wolfram-starter.wl",
+        "cloud_path": "wolfram/wolfram-starter.wl",
+        "kind": "local-wl",
+        "permission": "local"
+      },
+      {
+        "source_file": "wolfram-starter.wl",
+        "cloud_path": "wolfram-starter.wl",
+        "kind": "local-wl-wrapper",
+        "permission": "local"
+      }
+    ]
+  },
   "generated_artifacts": [
     "capstone-deck.md",
     "print-packet.md",
-    "print-packet.html"
+    "print-packet.html",
+    "explorer.html"
   ],
   "deferred_artifacts": [
     "capstone-deck.pptx",
