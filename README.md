@@ -53,6 +53,7 @@ duduk/
 ├── risks.md                    ← red-team risk register
 ├── resources.md                ← provenance, sources, cultural context
 ├── jig-decision.md             ← fixture decisions
+├── explorer.html               ← studio explorer for packet review
 ├── drawings/
 │   └── duduk-a3-section.svg   ← dimensioned longitudinal cross-section
 ├── cnc/
@@ -70,10 +71,11 @@ duduk/
 
 1. Read [`design.md`](design.md) for the acoustic model and empirical caveats.
 2. Open `duduk-design-table.xlsx` (Sheet: Duduk Family) for the full parametric table.
-3. Order materials per [`sourcing.csv`](sourcing.csv) — **order 6+ reeds**; reed quality dominates the build outcome.
-4. Follow [`assembly-manual.md`](assembly-manual.md) — body length is set empirically during reed fitting, not by formula.
-5. Record all measured values in [`validation.csv`](validation.csv).
-6. Review [`risks.md`](risks.md) — pay special attention to RISK-AC-01 (body length) and RISK-SC-02 (reed quality).
+3. Open [`explorer.html`](explorer.html) for a review-friendly index of the design files, validation gates, Wolfram source, print packet, site, and songbook material.
+4. Order materials per [`sourcing.csv`](sourcing.csv) — **order 6+ reeds**; reed quality dominates the build outcome.
+5. Follow [`assembly-manual.md`](assembly-manual.md) — body length is set empirically during reed fitting, not by formula.
+6. Record all measured values in [`validation.csv`](validation.csv).
+7. Review [`risks.md`](risks.md) — pay special attention to RISK-AC-01 (body length) and RISK-SC-02 (reed quality).
 
 ## Cultural Heritage
 
