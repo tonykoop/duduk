@@ -45,6 +45,7 @@ duduk/
 ├── sourcing.csv                ← supplier guidance
 ├── cut-list.csv                ← stock and machining sizes
 ├── validation.csv              ← dimensional and tuning checks
+├── reed-bore-authority-gates.csv ← reed and bore promotion gates (R35b)
 ├── assembly-manual.md          ← step-by-step build instructions
 ├── supplier-rfq.md             ← RFQ template
 ├── visual-bom-brief.md         ← visual BOM spec
@@ -76,6 +77,7 @@ duduk/
 5. Follow [`assembly-manual.md`](assembly-manual.md) — body length is set empirically during reed fitting, not by formula.
 6. Record all measured values in [`validation.csv`](validation.csv).
 7. Review [`risks.md`](risks.md) — pay special attention to RISK-AC-01 (body length) and RISK-SC-02 (reed quality).
+8. Before promoting any reed spec, bore dimension, calibrated body length, or fabrication DXF, clear the relevant rows in [`reed-bore-authority-gates.csv`](reed-bore-authority-gates.csv). The OpenSCAD smoke artifact in `cad/` and the dimensional starters in `design.md` are not fabrication authority until those gates pass.
 
 ## Cultural Heritage
 
