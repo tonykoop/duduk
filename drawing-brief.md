@@ -53,3 +53,15 @@
 - Revision block with date
 - "DRAFT — v4.3 — Not for production without physical validation" watermark
 - Title block: Instrument name | Key | Variant | Scale | Date | Drawn by
+
+---
+
+## Promotion Authority
+
+Before any of the above drawings is promoted from EMPIRICAL/DRAFT to a fabrication-authority DXF, STEP, or shop-reviewed CAD release, check `reed-bore-authority-gates.csv`:
+
+- DWG-01 bore ID, OD, wall, and body length are blocked by `BORE-GATE-001` (bore ID 3-point measurement), `BORE-GATE-002` (cylindricity / taper), and `BORE-GATE-003` (calibrated body length after empirical reed trim).
+- DWG-01 reed socket depth and DWG-03 reed geometry are blocked by `REED-GATE-001` (reed dimensional spec), `REED-GATE-003` (reed effective length), and `REED-GATE-004` (reed stability under bridle).
+- A full fabrication DXF or STEP is blocked by `BORE-GATE-004` until all preceding gates clear.
+
+The existing `drawings/duduk-a3-section.svg` and the `cad/duduk-openscad-smoke.scad` smoke artifact remain draft/illustrative and do not satisfy these gates.
