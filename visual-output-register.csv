@@ -1,0 +1,5 @@
+artifact_id,path,artifact_kind,role,authority,derived_from,dimension_claim,notes
+CAD-001,cad/duduk-openscad-smoke.scad,openscad_smoke,cad_scaffold,pending_measurement,duduk-design-table.xlsx family-spec.csv,none,"Parametric smoke model with empirical seed values from design table; all dimensions measurement-required; NOT fabrication authority."
+SVG-001,drawings/duduk-a3-section.svg,svg_preview,concept,concept_only,duduk-design-table.xlsx,none,"Longitudinal cross-section SVG; concept preview only; not a reviewed fabrication drawing."
+WL-001,wolfram-starter.wl,wolfram_source,analysis,reference_only,design.md family-spec.csv,none,"Source-only Wolfram starter; not executed; no runtime claims."
+WL-002,duduk-starter.wl,wolfram_source,analysis,reference_only,design.md,none,"Alternate Wolfram starter file; source-only; not executed."

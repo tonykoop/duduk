@@ -4,7 +4,7 @@ Engineering documentation and parametric design table for the duduk family — A
 
 > **Scope.** This repository documents the geometry and acoustic physics of the duduk and its regional cousins (Turkish mey, Azerbaijani balaban, Georgian duduki) for workshop fabrication and study. It does not reproduce traditional Armenian reed-making craft or performance technique. All tuning predictions are marked **empirical** and require physical build and measurement. See [`resources.md`](resources.md) for full provenance notes.
 
-**Status:** 🔒 Private draft — physical build and cultural review pending before public release.
+**Status:** L1 concept packet — physical build and cultural review gates block L2 promotion. V5 surface added: family-spec.csv, visual-output-register.csv, cad/mcp-session-log.md. OpenSCAD smoke model present (pending_measurement authority). All dimensions measurement-required.
 
 ---
 
