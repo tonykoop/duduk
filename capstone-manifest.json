@@ -37,16 +37,32 @@
   "engineering": {
     "wolfram": [
       {
-        "source_file": "wolfram/wolfram-starter.wl",
-        "cloud_path": "wolfram/wolfram-starter.wl",
-        "kind": "local-wl",
-        "permission": "local"
+        "source_file": "woodwind/duduk/duduk-starter.wl",
+        "cloud_path": "Musical_Instruments/woodwinds/duduk/duduk-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/woodwinds/duduk/duduk-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
       },
       {
-        "source_file": "wolfram-starter.wl",
-        "cloud_path": "wolfram-starter.wl",
-        "kind": "local-wl-wrapper",
-        "permission": "local"
+        "source_file": "woodwind/duduk/wolfram-starter.wl",
+        "cloud_path": "Musical_Instruments/woodwinds/duduk/wolfram-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/woodwinds/duduk/wolfram-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
+      },
+      {
+        "source_file": "woodwind/duduk/wolfram/duduk-wolfram-model.wl",
+        "cloud_path": "Musical_Instruments/woodwinds/duduk/duduk-wolfram-model.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/woodwinds/duduk/duduk-wolfram-model.wl",
+        "permission": "Public-Execute",
+        "kind": "geometry-model"
+      },
+      {
+        "source_file": "woodwind/duduk/wolfram/duduk-wolfram-starter.wl",
+        "cloud_path": "Musical_Instruments/woodwinds/duduk/duduk-wolfram-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/woodwinds/duduk/duduk-wolfram-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
       }
     ]
   },
