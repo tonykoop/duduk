@@ -37,7 +37,7 @@ holeNames   = {"Root", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "Th9"};
 
 (* ─── Interactive explorer (the deployable return value) ────── *)
 
-Manipulate[
+dudukExplorer = Manipulate[
   Module[{Lbody, holes},
     Lbody = bodyLengthEstimate[f0, boreM, reedLenM, reedFactor];
     holes = MapThread[
