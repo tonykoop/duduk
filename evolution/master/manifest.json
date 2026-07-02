@@ -1,0 +1,34 @@
+{
+  "product": "duduk",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "pre-commit intake, 2026-07-01",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/duduk-openscad-smoke.scad",
+      "format": "openscad-source",
+      "sha256": "5170423d3b3888ee2061eca8edef346e37ca6009c16b8273b03ef496fd137f22",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Conservative smoke model; empirical seed values from design table/family-spec; not fabrication authority."
+    },
+    {
+      "path": "wolfram/duduk-wolfram-model.wl",
+      "format": "wolfram-source",
+      "sha256": "eca0a5a1e4a8cba873de6e18fc97cd1f5397923258c0d29471c16487ba2c8ffc",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Source-only (not executed); L2 evidence."
+    },
+    {
+      "path": "duduk-design-table.xlsx",
+      "format": "design-table",
+      "sha256": "e925b761a699e7a820cd903535036578964f6b31b38beb67a34fb77ca904b2b1",
+      "authority": "fabrication",
+      "lossy": false,
+      "notes": "Current dimensional authority (Duduk Family sheet: bore/wall/reed rows by variant)."
+    }
+  ],
+  "notes": "Cultural-review gates and physical build remain open per README; this is Stage 0 intake of the existing L1 concept packet only. No STEP export; OpenSCAD smoke model is current master. Gate A (Alpha workspace compile) not yet run."
+}

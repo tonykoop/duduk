@@ -64,6 +64,7 @@ duduk/
 ├── site/
 │   └── index.html             ← build-log static site
 ├── cad/                        ← conservative OpenSCAD smoke starter + CAD notes
+├── evolution/                   ← evolution-pipeline Stage 0 intake: master manifest, design-intent, revision register (Gate A not yet run)
 ├── images/                     ← (placeholder — photos per photo-shotlist.md)
 └── data/                       ← (placeholder — measured validation data)
 ```
